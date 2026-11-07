@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nachtwake</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:ital@0;1&display=swap">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{ "imports": {
+  "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+  "three-mesh-bvh": "https://unpkg.com/three-mesh-bvh@0.7.3/build/index.module.js"
+} }</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<div id="hud" class="hidden">
+  <div id="objective"></div>
+  <div id="prompt"></div>
+  <div id="dot"></div>
+  <div id="relics"></div>
+  <div id="bars">
+    <div class="bar"><span>LAMP</span><i id="battery"></i></div>
+    <div class="bar"><span>ADEM</span><i id="stamina"></i></div>
+  </div>
+  <div id="subtitle"></div>
+</div>
+
+<canvas id="scare" class="hidden"></canvas>
+<div id="flash"></div>
+
+<div id="title" class="screen">
+  <div class="card">
+    <h1>NACHTWAKE</h1>
+    <p class="lore">Notre-Dame, 03:12. Het onweer slaat de stroom uit. Achter je vallen de deuren in het slot.
+    In de kathedraal is iemand de kaarsen aan het doven.</p>
+    <p class="lore">Vind de <b>vijf relikwieën</b>. Alleen dan gaat het westportaal weer open.</p>
+    <div id="loading"><div id="loadbar"></div><span id="loadtxt">De kathedraal laden…</span></div>
+    <div id="controls" class="hidden">
+      <div><kbd>W A S D</kbd> lopen &nbsp; <kbd>Shift</kbd> rennen (maakt lawaai)</div>
+      <div><kbd>F</kbd> zaklamp aan/uit &nbsp; <kbd>E</kbd> oppakken &nbsp; <kbd>Esc</kbd> pauze</div>
+      <div class="tip">Houd de lichtbundel op het wezen om het te verjagen. Zonder licht zie je weinig, maar het ziet jou ook minder goed.</div>
+    </div>
+    <button id="start" class="hidden">Betreed de kathedraal</button>
+    <p class="warn">Gebruik een koptelefoon. Bevat harde geluiden, schrikmomenten en flitsend licht (bliksem).</p>
+  </div>
+</div>
+
+<div id="pause" class="screen hidden"><div class="card"><h2>Gepauzeerd</h2><p>Klik om verder te gaan.</p></div></div>
+<div id="end" class="screen hidden"><div class="card"><h2 id="endTitle"></h2><p id="endText"></p><button id="again">Opnieuw</button></div></div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

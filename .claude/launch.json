@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "nachtwake",
+      "runtimeExecutable": "py",
+      "runtimeArgs": ["-m", "http.server", "8094"],
+      "port": 8094,
+      "autoPort": false
+    }
+  ]
+}
